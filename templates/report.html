@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Job Search</title>
+        <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+    </head>
+    <body>
+        <header>
+          <h1>Search Results</h1>
+          <h3>Found {{resultsNumber}} results for: {{searchingBy}}</h3>
+          <div><a href="/export?word={{searchingBy}}">Export to CSV</a></div>
+          <a href="/">Go Back</a>
+        </header>
+        <section>
+            {% for job in jobs %}
+                <div>
+                  <h4>{{job.title}}</h4>
+                  <h4>{{job.company}}</h4>
+                  <a href="{{job.apply}}" target="_blank">Apply</a>
+                </div>
+                <hr>
+            {% endfor %}
+        </section>
+    </body>
+</html>
